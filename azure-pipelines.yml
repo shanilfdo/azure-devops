@@ -17,15 +17,6 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: AzurePowerShell@5
-  inputs:
-    azureSubscription: 'Visual Studio Enterprise(fc903bbd-2b86-4e73-a4ed-a483f4e9c974)'
-    ScriptType: 'InlineScript'
-    Inline: |
-      # You can write your azure powershell scripts inline here. 
-      # You can also pass predefined and custom variables to this script using arguments
-      sqlpackage.exe /Action:Extract /?
-    azurePowerShellVersion: 'LatestVersion'
 - task: SqlAzureDacpacDeployment@1
   inputs:
     azureSubscription: 'Visual Studio Enterprise(1)(fc903bbd-2b86-4e73-a4ed-a483f4e9c974)'
