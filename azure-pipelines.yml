@@ -26,3 +26,14 @@ steps:
       # You can also pass predefined and custom variables to this script using arguments
       sqlpackage.exe /Action:Extract /?
     azurePowerShellVersion: 'LatestVersion'
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'Visual Studio Enterprise(1)(fc903bbd-2b86-4e73-a4ed-a483f4e9c974)'
+    AuthenticationType: 'server'
+    ServerName: 'shanil-test.database.windows.net'
+    DatabaseName: 'Test'
+    SqlUsername: 'shanil'
+    SqlPassword: 'Anushka863'
+    deployType: 'DacpacTask'
+    DeploymentAction: 'Extract'
+    IpDetectionMethod: 'AutoDetect'
