@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 - script: echo Hello, world!
@@ -17,3 +17,11 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: AzurePowerShell@5
+  inputs:
+    ScriptType: 'InlineScript'
+    Inline: |
+      # You can write your azure powershell scripts inline here. 
+      # You can also pass predefined and custom variables to this script using arguments
+      SqlPackage.exe
+    azurePowerShellVersion: 'LatestVersion'
