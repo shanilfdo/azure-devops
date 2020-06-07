@@ -28,3 +28,15 @@ steps:
     deployType: 'DacpacTask'
     DeploymentAction: 'Extract'
     IpDetectionMethod: 'AutoDetect'
+- task: SqlAzureDacpacDeployment@1
+  inputs:
+    azureSubscription: 'Visual Studio Enterprise (fc903bbd-2b86-4e73-a4ed-a483f4e9c974)'
+    AuthenticationType: 'server'
+    ServerName: 'shanil-stage.database.windows.net'
+    DatabaseName: 'Stage'
+    SqlUsername: 'shanil'
+    SqlPassword: 'Anushka863'
+    deployType: 'DacpacTask'
+    DeploymentAction: 'Publish'
+    DacpacFile: '$(SqlDeploymentOutputFile)'
+    IpDetectionMethod: 'AutoDetect'
