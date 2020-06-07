@@ -19,6 +19,7 @@ steps:
   displayName: 'Run a multi-line script'
 - task: AzurePowerShell@5
   inputs:
+    azureSubscription: 'Visual Studio Enterprise(fc903bbd-2b86-4e73-a4ed-a483f4e9c974)'
     ScriptType: 'InlineScript'
     Inline: |
       # You can write your azure powershell scripts inline here. 
