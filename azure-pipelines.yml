@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: 'devops-agent'
+  name: 'default'
 
 steps:
 - script: echo Hello, world!
